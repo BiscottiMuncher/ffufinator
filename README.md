@@ -8,7 +8,7 @@ ffuf distributed across multiple machines
 Install all packages with pip, ffuf is a requirement across all machines 
 
 ```bash
-python install -r requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Usage/Examples
