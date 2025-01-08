@@ -1,7 +1,7 @@
 
 # Ffufinator
 
-ffuf distributed across multiple machines
+ffuf distributed across multiple machines using Dask
 
 ## Installation
 
