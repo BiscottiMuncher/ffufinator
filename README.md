@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 Running this script on the main/naster machines will send tasks to all the workers
 ```bash
-python3 ffufinator <host_IP> <url> <wordlist> <output_file> [ffuf_arguments]
+python3 ffufinator <host_IP> <url + FUZZ> <wordlist> <output_file> [ffuf_arguments]
 
 ```
 
