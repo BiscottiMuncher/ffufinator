@@ -19,8 +19,7 @@ python3 ffufinator <host_IP> <url> <wordlist> <output_file> [ffuf_arguments]
 
 ```
 
-All worker machines should have dask running on start up
-
+Setup will install all needed scripts, packages, generate the python environment, and setup a cron task that starts dask on boot
 ```bash
 python3 setup <dask_scheduler_IP>
 ```
