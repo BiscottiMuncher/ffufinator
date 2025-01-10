@@ -15,14 +15,14 @@ pip install -r requirements.txt
 
 Running this script on the main/naster machines will send tasks to all the workers
 ```bash
-./ffufinator <host_IP> <url> <wordlist> <output_file> [ffuf_arguments]
+python3 ffufinator <host_IP> <url> <wordlist> <output_file> [ffuf_arguments]
 
 ```
 
 All worker machines should have dask running on start up
 
 ```bash
-./setup <dask_scheduler_IP>
+python3 setup <dask_scheduler_IP>
 ```
 
 ## Lessons Learned
