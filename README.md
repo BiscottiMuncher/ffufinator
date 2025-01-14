@@ -31,3 +31,6 @@ This re-sparked my interest in python(for the millionth time) and distributed co
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
+
+## Credit
+ffuf: https://github.com/ffuf/ffuf
