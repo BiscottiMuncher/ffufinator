@@ -3,12 +3,15 @@ import os
 import sys
 import subprocess
 
+def run_command(command):
+    subprocess.run(command, shell=True, check=True)
+
 def setup_cron(task_path):
-    subprocess.run('touch mycron', shell=True, check=True)
-    subprocess.run(f'echo "@reboot {task_path}" >> mycron', shell=True, check=True)
-    subprocess.run('crontab mycron', shell=True, check=True)
-    subprocess.run('rm mycron', shell=True, check=True)
-    subprocess.run('sudo reboot', shell=True, check=True)
+    run_command('touch mycron')
+    run_command(f'echo "@reboot {task_path}" >> mycron')
+    run_command('crontab mycron')
+    run_command('rm mycron')
+    run_command('sudo reboot')
 
 def install_ffuf():
     if(os.path.exists('/usr/bin/ffuf')): 
@@ -16,15 +19,15 @@ def install_ffuf():
         return
     else:
         print("Installing ffuf")
-        subprocess.run('sudo apt-get install ffuf -y', shell=True, check=True)
-     
+        run_command('sudo apt-get install ffuf -y')
+         
 def setup_env():
-    subprocess.run('sudo apt-get install python3.11-venv -y ', shell=True, check=True)
-    subprocess.run('python3 -m venv worker', shell=True, check=True)
+    run_command('sudo apt-get install python3.11-venv -y ')
+    run_command('python3 -m venv worker')
     pip_path = os.path.join("worker", "bin", "pip")
-    subprocess.run(f"{pip_path} install --upgrade pip", shell=True, check=True)
-    subprocess.run(f"{pip_path} install dask[distributed]", shell=True, check=True)
-
+    run_command(f'{pip_path} install --upgrade pip')
+    run_command(f"{pip_path} install dask[distributed]")
+    
 def generate_script(master_addr):
     file_path = 'worker.sh'
     with open(file_path, 'w') as file:
