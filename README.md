@@ -15,7 +15,8 @@ pip install -r requirements.txt
 
 Running this script on the main/naster machines will send tasks to all the workers
 ```bash
-python3 ffufinator <url + FUZZ> <wordlist> <output_file> [ffuf_arguments]
+chmod +x ffufinator.py
+./ffufinator.py <url + FUZZ> <wordlist> <output_file> [ffuf_arguments]
 
 ```
 
@@ -32,5 +33,5 @@ This re-sparked my interest in python(for the millionth time) and distributed co
 
 [MIT](https://choosealicense.com/licenses/mit/)
 
-## Credit
+## Credits
 ffuf: https://github.com/ffuf/ffuf
